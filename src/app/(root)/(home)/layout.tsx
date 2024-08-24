@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-
 import React, { ReactNode } from "react";
 
 export default function Rootlayout({ children }: { children: ReactNode }) {
