@@ -1,8 +1,14 @@
+'use client';
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 import React, { ReactNode } from "react";
 
 export default function Rootlayout({ children }: { children: ReactNode }) {
+  const router = useRouter();
+  const {user}=useUser();
+  if(!user) return router.push("/sign-in");
   return (
     <main className="relative">
       <Navbar />
